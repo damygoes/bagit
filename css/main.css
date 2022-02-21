@@ -1,0 +1,416 @@
+/* --------Setting Variables----------- */
+:root {
+  --page-1-color: #b9c0c8;
+  --page-2-color: #121117;
+  --page-3-color: #e71930;
+  --page-4-color: #47a8ac;
+  --page-5-color: #f96c21;
+  --page-6-color: #d5d6da;
+  --primary-color: #e71930;
+  --secondary-color: #f96c21;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 1.6;
+  width: 100vw;
+  overflow-x: hidden;
+  color: #121117;
+}
+
+/* -------Page Colors------- */
+#hero {
+  background-color: var(--page-1-color);
+}
+
+#about {
+  background-color: var(--page-2-color);
+}
+
+.bags {
+  background-color: var(--page-3-color);
+}
+
+.bags-flip {
+  background-color: var(--page-4-color);
+}
+
+#featured {
+  background-color: var(--page-5-color);
+}
+
+#contact {
+  background-color: var(--page-6-color);
+}
+
+/* ------All Pages Styles------ */
+.page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+
+/* ------Navbar Section------ */
+.mainNav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  width: 100vw;
+  height: 10vh;
+  background-color: var(--page-1-color);
+}
+
+.mainNav .left-nav,
+.mainNav .right-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40%;
+  padding: 0.5em;
+}
+
+.mainNav .left-nav li,
+.mainNav .right-nav li {
+  margin: 0em 1em;
+}
+
+.mainNav .brand-logo {
+  font-size: 3rem;
+  font-weight: 900;
+  font-family: "Vesper Libre", serif;
+}
+
+.mainNav .brand-logo span {
+  color: var(--primary-color);
+  margin: 0.01em;
+}
+
+.left-nav {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.right-nav {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+/* ------The Header Section------ */
+#hero {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#hero .main-title {
+  font-family: "Vesper Libre", serif;
+  font-weight: 700;
+  font-size: 4rem;
+  text-align: center;
+  padding: 0.5em 3em 0.2em 3em;
+  margin: 3em 2em 0em 2em;
+}
+
+#hero .hero-cta a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 50%;
+  margin-top: 0.2em;
+  padding: 0.2em;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+#hero .hero-cta a:hover {
+  background-color: var(--secondary-color);
+}
+
+#hero svg {
+  width: 20px;
+  height: 20px;
+  margin: 0 0.5em;
+}
+
+/* ------The About Section------ */
+#about {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+}
+
+#about p {
+  text-align: center;
+  width: 60%;
+}
+
+/* ------The Product Section------ */
+.bags {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bags img {
+  width: 100%;
+  height: 100%;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 80%;
+}
+
+.row .product-content {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: right;
+  margin-right: 2em;
+}
+
+.row .product-image {
+  width: 40%;
+}
+
+.bags-flip {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bags-flip img {
+  width: 100%;
+  height: 100%;
+}
+
+.row-flip {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 80%;
+}
+
+.row-flip .product-content-flip {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: left;
+  margin-left: 2em;
+}
+
+.row-flip .product-image-flip {
+  width: 40%;
+}
+
+/*-------The Featured Section-----------*/
+#featured {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.row-featured {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 90%;
+  padding: 1em 5em;
+}
+
+.row-featured .featured-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.row-featured .featured-product .featured-image {
+  width: 100%;
+  height: 50%;
+  margin-top: 4em;
+}
+
+#featured img {
+  width: 100%;
+  height: 100%;
+}
+
+/*-------The Contact Section-----------*/
+#contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+#contact .column-1,
+#contact .column-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+#contact .column-1 {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#contact .column-1 h3 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  padding: 1em;
+  margin: 0.5em 2.5em;
+}
+
+.chat-svg svg {
+  width: 100%;
+  height: 150%;
+  margin: 0.5em 1em 2em 1em;
+}
+
+#contact .column-2 {
+  height: 80%;
+  padding: 2em;
+  margin: 1.5em 1em;
+}
+
+#contact .column-2 p {
+  font-size: 2rem;
+  margin: 1.8em 0em 1em 0em;
+}
+
+#contact .column-2 .form-footer {
+  width: 70%;
+}
+
+#contact .column-2 .form-footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#contact .column-2 .form-footer ul li {
+  padding: 0.2em;
+  margin: 0.8em 0em;
+}
+
+.column-2 form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.column-2 form input {
+  margin: 0.3em 0em 1em 0em;
+}
+
+input[type="text"],
+input[type="tel"],
+textarea {
+  width: 70%;
+}
+
+.form-btn {
+  width: 10%;
+}
+/*# sourceMappingURL=main.css.map */

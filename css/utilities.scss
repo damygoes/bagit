@@ -1,0 +1,25 @@
+li {
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
+
+  &:hover {
+    border-bottom: 2px solid var(--secondary-color);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn-primary {
+}
+
+.btn-secondary {
+}
+
+.primary-text {
+}
+
+.secondary-text {
+}

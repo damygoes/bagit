@@ -1,0 +1,306 @@
+/* --------Setting Variables----------- */
+:root {
+  --page-1-color: #b9c0c8;
+  --page-2-color: #121117;
+  --page-3-color: #e71930;
+  --page-4-color: #47a8ac;
+  --page-5-color: #f96c21;
+  --page-6-color: #d5d6da;
+  --primary-color: #e71930;
+  --secondary-color: #f96c21;
+}
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Vesper Libre', serif;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.6;
+  width: 100vw;
+  overflow-x: hidden;
+  color: #121117;
+}
+
+/* -------Page Colors------- */
+#hero {
+  background-color: var(--page-1-color);
+}
+#about {
+  background-color: var(--page-2-color);
+}
+.bags {
+  background-color: var(--page-3-color);
+}
+.bags-flip {
+  background-color: var(--page-4-color);
+}
+#featured {
+  background-color: var(--page-5-color);
+}
+#contact {
+  background-color: var(--page-6-color);
+}
+
+/* ------All Pages Styles------ */
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ------Navbar Section------ */
+
+.mainNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  height: 10vh;
+  background-color: var(--page-1-color);
+
+  .left-nav,
+  .right-nav {
+    display: flex;
+    width: 40%;
+    padding: 0.5em;
+
+    li {
+      margin: 0em 1em;
+    }
+  }
+
+  .brand-logo {
+    font-size: 3rem;
+    font-weight: 900;
+    font-family: "Vesper Libre", serif;
+    span {
+      color: var(--primary-color);
+      margin: 0.01em;
+    }
+  }
+}
+
+.left-nav {
+  justify-content: flex-end;
+}
+.right-nav {
+  justify-content: flex-start;
+}
+/* ------The Header Section------ */
+#hero {
+  align-items: center;
+  justify-content: center;
+
+  .main-title {
+    font-family: "Vesper Libre", serif;
+    font-weight: 700;
+    font-size: 4rem;
+    text-align: center;
+    padding: 0.5em 3em 0.2em 3em;
+    margin: 3em 2em 0em 2em;
+  }
+
+  .hero-cta a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    margin-top: 0.2em;
+    padding: 0.2em;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    transition: all 400ms ease-in-out;
+
+    &:hover {
+      background-color: var(--secondary-color);
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    margin: 0 0.5em;
+  }
+}
+
+/* ------The About Section------ */
+#about {
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+  p {
+    text-align: center;
+    width: 60%;
+  }
+}
+
+/* ------The Product Section------ */
+.bags {
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+
+  .product-content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+    margin-right: 2em;
+  }
+
+  .product-image {
+    width: 40%;
+  }
+}
+
+// Product Row Flipped //
+.bags-flip {
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.row-flip {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  width: 80%;
+
+  .product-content-flip {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    margin-left: 2em;
+  }
+
+  .product-image-flip {
+    width: 40%;
+  }
+}
+
+/*-------The Featured Section-----------*/
+#featured {
+  align-items: center;
+}
+.row-featured {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  padding: 1em 5em;
+
+  .featured-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .featured-image {
+      width: 100%;
+      height: 50%;
+      margin-top: 4em;
+    }
+  }
+}
+
+#featured img {
+  width: 100%;
+  height: 100%;
+}
+
+/*-------The Contact Section-----------*/
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#contact .column-1,
+#contact .column-2 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+#contact .column-1 {
+  align-items: center;
+
+  h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    padding: 1em;
+    margin: 0.5em 2.5em;
+  }
+}
+.chat-svg svg {
+  width: 100%;
+  height: 150%;
+  margin: 0.5em 1em 2em 1em;
+}
+
+#contact .column-2 {
+  //   justify-content: center;
+  height: 80%;
+  padding: 2em;
+  margin: 1.5em 1em;
+
+  p {
+    font-size: 2rem;
+    margin: 1.8em 0em 1em 0em;
+  }
+
+  .form-footer {
+    width: 70%;
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      li {
+        padding: 0.2em;
+        margin: 0.8em 0em;
+      }
+    }
+  }
+}
+
+.column-2 form {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    margin: 0.3em 0em 1em 0em;
+  }
+}
+
+input[type="text"],
+input[type="tel"],
+textarea {
+  width: 70%;
+}
+
+.form-btn {
+  width: 10%;
+}
