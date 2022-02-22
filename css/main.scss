@@ -8,6 +8,7 @@
   --page-6-color: #d5d6da;
   --primary-color: #e71930;
   --secondary-color: #f96c21;
+  --animate-speed: 1.5s;
 }
 // font-family: 'Montserrat', sans-serif;
 // font-family: 'Vesper Libre', serif;
@@ -16,16 +17,16 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  line-height: 1.6;
+  line-height: 1.4;
   width: 100vw;
   overflow-x: hidden;
   color: #121117;
 }
 
 /* -------Page Colors------- */
-#hero {
-  background-color: var(--page-1-color);
-}
+// #hero {
+//   // background-color: var(--page-1-color);
+// }
 #about {
   background-color: var(--page-2-color);
 }
@@ -48,9 +49,9 @@ body {
   flex-direction: column;
   height: 100vh;
 }
-
+/////////////////////////////////////////////
 /* ------Navbar Section------ */
-
+/////////////////////////////////////////////
 .mainNav {
   display: flex;
   justify-content: space-between;
@@ -59,6 +60,8 @@ body {
   width: 100vw;
   height: 10vh;
   background-color: var(--page-1-color);
+  // background-color: var(--page-2-color);
+  z-index: 999;
 
   .left-nav,
   .right-nav {
@@ -75,6 +78,7 @@ body {
     font-size: 3rem;
     font-weight: 900;
     font-family: "Vesper Libre", serif;
+
     span {
       color: var(--primary-color);
       margin: 0.01em;
@@ -88,60 +92,156 @@ body {
 .right-nav {
   justify-content: flex-start;
 }
-/* ------The Header Section------ */
+
+/////////////////////////////////////////////
+/* ------The Header/Hero Section------ */
+/////////////////////////////////////////////
 #hero {
-  align-items: center;
+  position: relative;
+  // align-items: flex-start;
   justify-content: center;
+  background: url("../images/trinh-minh-2.jpg") top center/cover no-repeat;
 
   .main-title {
     font-family: "Vesper Libre", serif;
     font-weight: 700;
     font-size: 4rem;
+    line-height: 1.2;
+    max-width: 40%;
     text-align: center;
-    padding: 0.5em 3em 0.2em 3em;
-    margin: 3em 2em 0em 2em;
+    padding: 0.5em 0em;
+    margin: 5em 0.1em 0em 0em;
+    // border: 1px solid red;
   }
 
-  .hero-cta a {
+  .hero-cta {
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 50%;
-    margin-top: 0.2em;
-    padding: 0.2em;
-    background-color: var(--primary-color);
-    border-radius: 20px;
-    transition: all 400ms ease-in-out;
+    align-items: center;
+    width: 40%;
+    height: 10%;
+    margin-top: 0.5em;
+    // border: 1px solid blue;
 
-    &:hover {
-      background-color: var(--secondary-color);
+    a {
+      font-size: 1.2rem;
+      margin: 0.1em 0.5em;
+      padding: 0.5em 1em;
+      width: 20%;
+      text-align: center;
+      // border: 1px solid red;
+
+      &:hover {
+        background-color: var(--secondary-color);
+      }
     }
-  }
-
-  svg {
-    width: 20px;
-    height: 20px;
-    margin: 0 0.5em;
   }
 }
 
+.primary-link,
+.secondary-link {
+  border: none;
+  border-radius: 50px;
+}
+
+.primary-link {
+  background-color: var(--primary-color);
+}
+
+.secondary-link {
+  border: 1px solid var(--secondary-color);
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background: rgba(185, 192, 200, 0.6);
+  background: rgba(231, 25, 48, 0.1);
+}
+
+#hero * {
+  z-index: 10;
+}
+
+/* ------Hero Section Animation------ */
+#hero .main-title {
+  transform: translateX(-1200px);
+  animation: heading var(--animate-speed) forwards ease-in;
+}
+#hero .hero-cta {
+  visibility: hidden;
+  animation: hero-cta var(--animate-speed) forwards ease-in 2s;
+}
+
+/* ------Keyframes------ */
+@keyframes heading {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-cta {
+  to {
+    visibility: visible;
+  }
+}
+
+/////////////////////////////////////////////
 /* ------The About Section------ */
+/////////////////////////////////////////////
 #about {
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #fff;
+
+  .section-head {
+    margin-bottom: 0em;
+  }
 
   p {
     text-align: center;
     width: 60%;
+    margin-top: 1em;
+    font-size: 1.2rem;
   }
 }
 
+.section-head + hr {
+  border: none;
+  border-top: 3px double #fff;
+  color: #fff;
+  overflow: visible;
+  text-align: center;
+  height: 1px;
+  width: 150px;
+  margin-top: 0.1em;
+  margin-bottom: 2em;
+}
+
+.section-head + hr:after {
+  background: var(--page-2-color);
+  content: url(../images/bag-heart.svg);
+  padding: 0 4px;
+  position: relative;
+  top: -13px;
+}
+
+/////////////////////////////////////////////
 /* ------The Product Section------ */
+/////////////////////////////////////////////
 .bags {
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
+  color: #fff;
+
+  .product-section-head {
+    margin-bottom: 0em;
+    margin-top: 2.5em;
+  }
 
   img {
     width: 100%;
@@ -149,10 +249,41 @@ body {
   }
 }
 
+.product-section-head + hr {
+  border: none;
+  border-top: 3px double #fff;
+  color: #fff;
+  overflow: visible;
+  text-align: center;
+  height: 1px;
+  width: 150px;
+  margin-top: 0.1em;
+  margin-bottom: 3em;
+}
+
+.product-section-head + hr:after {
+  background: var(--page-3-color);
+  content: url(../images/bag-heart.svg);
+  padding: 0 4px;
+  position: relative;
+  top: -13px;
+}
+
 .row {
   display: flex;
   justify-content: center;
+  position: relative;
   width: 80%;
+  margin: 1em 0em;
+
+  svg {
+    position: absolute;
+    top: 80%;
+    right: 100%;
+    width: 30px;
+    height: 80px;
+    fill: var(--page-6-color);
+  }
 
   .product-content {
     width: 40%;
@@ -161,10 +292,56 @@ body {
     justify-content: center;
     text-align: right;
     margin-right: 2em;
+
+    .product-name {
+      font-family: "Vesper Libre", serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      margin: 0.2em;
+    }
+
+    .product-description {
+      font-size: 1.2rem;
+      font-weight: 100;
+      margin: 1em 0.5em;
+      padding: 0.2em;
+    }
+
+    .more-info {
+      text-transform: uppercase;
+      font-size: 1.2em;
+      width: 30%;
+      align-self: flex-end;
+      text-align: center;
+      border-radius: 50px;
+      border: none;
+      background-color: #121117;
+      margin: 2em 0.5em;
+      padding: 0.5em;
+      transition: all 400ms ease-in-out;
+      // border: 1px solid white;
+
+      &:hover {
+        background-color: var(--secondary-color);
+      }
+    }
   }
 
   .product-image {
     width: 40%;
+  }
+}
+
+/* ------Product Section Arrow SVG Animation------ */
+.row svg {
+  animation: bounce var(--animate-speed) infinite ease-in;
+}
+
+/* ------Keyframes------ */
+@keyframes bounce {
+  to {
+    top: 90%;
   }
 }
 
@@ -183,6 +360,7 @@ body {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
+  position: relative;
   width: 80%;
 
   .product-content-flip {
@@ -192,6 +370,42 @@ body {
     justify-content: center;
     text-align: left;
     margin-left: 2em;
+
+    .product-name-flip {
+      font-family: "Vesper Libre", serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      margin: 0.2em;
+    }
+
+    .product-description-flip {
+      font-size: 1.2rem;
+      font-weight: 100;
+      margin: 1em 0.5em;
+      padding: 0.2em;
+    }
+
+    .more-info-flip {
+      text-transform: uppercase;
+      font-size: 1.2em;
+      width: 30%;
+      align-self: flex-start;
+      text-align: center;
+      border-radius: 50px;
+      border: none;
+      background-color: #121117;
+      color: var(--page-6-color);
+      margin: 2em 0.5em;
+      padding: 0.5em;
+      transition: all 400ms ease-in-out;
+      // border: 1px solid white;
+
+      &:hover {
+        background-color: var(--secondary-color);
+        color: var(--page-2-color);
+      }
+    }
   }
 
   .product-image-flip {
@@ -199,14 +413,49 @@ body {
   }
 }
 
+.row-flip svg {
+  position: absolute;
+  transform: rotate(180deg);
+  bottom: 80%;
+  left: 100%;
+  width: 30px;
+  height: 80px;
+  fill: var(--page-6-color);
+}
+
+/* ------Product Flipped Section Arrow SVG Animation------ */
+.row-flip svg {
+  animation: bounce-flip var(--animate-speed) infinite ease-in;
+}
+
+/* ------Keyframes------ */
+@keyframes bounce-flip {
+  to {
+    bottom: 90%;
+  }
+}
+
+/////////////////////////////////////////////
 /*-------The Featured Section-----------*/
+/////////////////////////////////////////////
 #featured {
   align-items: center;
+  color: #fff;
+
+  .section-head {
+    margin-bottom: 0em;
+    margin-top: 2em;
+    padding: 0.2em;
+    text-align: center;
+    width: 50%;
+    // border: 1px solid white;
+  }
 }
 .row-featured {
   display: flex;
   justify-content: space-evenly;
   width: 90%;
+  // margin: 0.2em 0em;
   padding: 1em 5em;
 
   .featured-product {
@@ -217,7 +466,40 @@ body {
     .featured-image {
       width: 100%;
       height: 50%;
-      margin-top: 4em;
+      margin-top: 0.2em;
+    }
+  }
+}
+
+.featured-product-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .product-name {
+    font-family: "Vesper Libre", serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.2em;
+  }
+
+  .more-info {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 1px solid var(--page-2-color);
+    // border-radius: 50px;
+    width: 50%;
+    font-size: 0.7rem;
+    font-weight: 400;
+    margin-bottom: 0.2em;
+    padding: 0.5em 1em;
+    transition: all 400ms ease-in-out;
+
+    &:hover {
+      background-color: var(--page-2-color);
+      color: #fff;
+      border: none;
     }
   }
 }
@@ -227,7 +509,9 @@ body {
   height: 100%;
 }
 
+/////////////////////////////////////////////
 /*-------The Contact Section-----------*/
+/////////////////////////////////////////////
 #contact {
   display: flex;
   justify-content: center;
@@ -246,6 +530,8 @@ body {
   align-items: center;
 
   h3 {
+    font-family: "Vesper Libre", serif;
+    font-weight: 700;
     text-align: center;
     text-transform: uppercase;
     font-size: 2.5rem;
@@ -257,6 +543,7 @@ body {
   width: 100%;
   height: 150%;
   margin: 0.5em 1em 2em 1em;
+  fill: var(--secondary-color);
 }
 
 #contact .column-2 {
@@ -266,10 +553,38 @@ body {
   margin: 1.5em 1em;
 
   p {
+    font-family: "Vesper Libre", serif;
+    font-weight: 700;
     font-size: 2rem;
     margin: 1.8em 0em 1em 0em;
   }
 
+  form {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+
+    label {
+      font-size: 1rem;
+    }
+
+    input,
+    textarea {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 5px 5px 10px var(--page-1-color);
+    }
+    input {
+      height: 15%;
+    }
+    textarea {
+      height: 50%;
+    }
+  }
+
+  textarea::-webkit-resizer {
+    display: none;
+  }
+  /*-------The Form Footer(Social Media Links-----------*/
   .form-footer {
     width: 70%;
 
@@ -280,7 +595,19 @@ body {
 
       li {
         padding: 0.2em;
-        margin: 0.8em 0em;
+        margin: 2.5em 0em;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.8rem;
+      }
+
+      .form-footer-link-1 {
+        color: #bc2a8d;
+      }
+      .form-footer-link-2 {
+        color: #3b5998;
+      }
+      .form-footer-link-3 {
+        color: #00acee;
       }
     }
   }
@@ -303,4 +630,31 @@ textarea {
 
 .form-btn {
   width: 10%;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  padding: 0.5em;
+  color: var(--page-4-color);
+}
+
+.form-btn {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  border: none;
+  border-radius: 50px;
+  padding: 0.2em;
+  margin-top: 0.8em;
+  width: 20%;
+  box-shadow: 5px 5px 10px var(--page-1-color);
+  transition: all 400ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--page-5-color);
+    color: #fff;
+  }
 }

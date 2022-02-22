@@ -11,4 +11,36 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.btn-primary,
+.btn-secondary {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  padding: 0.2em;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.btn-primary {
+  font-weight: 400;
+  background-color: var(--primary-color);
+}
+
+.btn-secondary {
+  font-weight: 100;
+  background-color: var(--secondary-color);
+}
+
+h2 {
+  font-family: "Vesper Libre", serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
 /*# sourceMappingURL=utilities.css.map */

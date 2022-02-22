@@ -8,6 +8,7 @@
   --page-6-color: #d5d6da;
   --primary-color: #e71930;
   --secondary-color: #f96c21;
+  --animate-speed: 1.5s;
 }
 
 body {
@@ -15,17 +16,13 @@ body {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  line-height: 1.6;
+  line-height: 1.4;
   width: 100vw;
   overflow-x: hidden;
   color: #121117;
 }
 
 /* -------Page Colors------- */
-#hero {
-  background-color: var(--page-1-color);
-}
-
 #about {
   background-color: var(--page-2-color);
 }
@@ -73,6 +70,7 @@ body {
   width: 100vw;
   height: 10vh;
   background-color: var(--page-1-color);
+  z-index: 999;
 }
 
 .mainNav .left-nav,
@@ -112,53 +110,119 @@ body {
           justify-content: flex-start;
 }
 
-/* ------The Header Section------ */
+/* ------The Header/Hero Section------ */
 #hero {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  position: relative;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background: url("../images/trinh-minh-2.jpg") top center/cover no-repeat;
 }
 
 #hero .main-title {
   font-family: "Vesper Libre", serif;
   font-weight: 700;
   font-size: 4rem;
+  line-height: 1.2;
+  max-width: 40%;
   text-align: center;
-  padding: 0.5em 3em 0.2em 3em;
-  margin: 3em 2em 0em 2em;
+  padding: 0.5em 0em;
+  margin: 5em 0.1em 0em 0em;
 }
 
-#hero .hero-cta a {
+#hero .hero-cta {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100%;
-  height: 50%;
-  margin-top: 0.2em;
-  padding: 0.2em;
-  background-color: var(--primary-color);
-  border-radius: 20px;
-  -webkit-transition: all 400ms ease-in-out;
-  transition: all 400ms ease-in-out;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40%;
+  height: 10%;
+  margin-top: 0.5em;
+}
+
+#hero .hero-cta a {
+  font-size: 1.2rem;
+  margin: 0.1em 0.5em;
+  padding: 0.5em 1em;
+  width: 20%;
+  text-align: center;
 }
 
 #hero .hero-cta a:hover {
   background-color: var(--secondary-color);
 }
 
-#hero svg {
-  width: 20px;
-  height: 20px;
-  margin: 0 0.5em;
+.primary-link,
+.secondary-link {
+  border: none;
+  border-radius: 50px;
+}
+
+.primary-link {
+  background-color: var(--primary-color);
+}
+
+.secondary-link {
+  border: 1px solid var(--secondary-color);
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(231, 25, 48, 0.1);
+}
+
+#hero * {
+  z-index: 10;
+}
+
+/* ------Hero Section Animation------ */
+#hero .main-title {
+  -webkit-transform: translateX(-1200px);
+          transform: translateX(-1200px);
+  -webkit-animation: heading var(--animate-speed) forwards ease-in;
+          animation: heading var(--animate-speed) forwards ease-in;
+}
+
+#hero .hero-cta {
+  visibility: hidden;
+  -webkit-animation: hero-cta var(--animate-speed) forwards ease-in 2s;
+          animation: hero-cta var(--animate-speed) forwards ease-in 2s;
+}
+
+/* ------Keyframes------ */
+@-webkit-keyframes heading {
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes heading {
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes hero-cta {
+  to {
+    visibility: visible;
+  }
+}
+
+@keyframes hero-cta {
+  to {
+    visibility: visible;
+  }
 }
 
 /* ------The About Section------ */
@@ -169,12 +233,38 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: white;
+  color: #fff;
+}
+
+#about .section-head {
+  margin-bottom: 0em;
 }
 
 #about p {
   text-align: center;
   width: 60%;
+  margin-top: 1em;
+  font-size: 1.2rem;
+}
+
+.section-head + hr {
+  border: none;
+  border-top: 3px double #fff;
+  color: #fff;
+  overflow: visible;
+  text-align: center;
+  height: 1px;
+  width: 150px;
+  margin-top: 0.1em;
+  margin-bottom: 2em;
+}
+
+.section-head + hr:after {
+  background: var(--page-2-color);
+  content: url(../images/bag-heart.svg);
+  padding: 0 4px;
+  position: relative;
+  top: -13px;
 }
 
 /* ------The Product Section------ */
@@ -182,14 +272,37 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  color: #fff;
+}
+
+.bags .product-section-head {
+  margin-bottom: 0em;
+  margin-top: 2.5em;
 }
 
 .bags img {
   width: 100%;
   height: 100%;
+}
+
+.product-section-head + hr {
+  border: none;
+  border-top: 3px double #fff;
+  color: #fff;
+  overflow: visible;
+  text-align: center;
+  height: 1px;
+  width: 150px;
+  margin-top: 0.1em;
+  margin-bottom: 3em;
+}
+
+.product-section-head + hr:after {
+  background: var(--page-3-color);
+  content: url(../images/bag-heart.svg);
+  padding: 0 4px;
+  position: relative;
+  top: -13px;
 }
 
 .row {
@@ -199,7 +312,18 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
   width: 80%;
+  margin: 1em 0em;
+}
+
+.row svg {
+  position: absolute;
+  top: 80%;
+  right: 100%;
+  width: 30px;
+  height: 80px;
+  fill: var(--page-6-color);
 }
 
 .row .product-content {
@@ -218,8 +342,61 @@ body {
   margin-right: 2em;
 }
 
+.row .product-content .product-name {
+  font-family: "Vesper Libre", serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin: 0.2em;
+}
+
+.row .product-content .product-description {
+  font-size: 1.2rem;
+  font-weight: 100;
+  margin: 1em 0.5em;
+  padding: 0.2em;
+}
+
+.row .product-content .more-info {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  width: 30%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  text-align: center;
+  border-radius: 50px;
+  border: none;
+  background-color: #121117;
+  margin: 2em 0.5em;
+  padding: 0.5em;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.row .product-content .more-info:hover {
+  background-color: var(--secondary-color);
+}
+
 .row .product-image {
   width: 40%;
+}
+
+/* ------Product Section Arrow SVG Animation------ */
+.row svg {
+  -webkit-animation: bounce var(--animate-speed) infinite ease-in;
+          animation: bounce var(--animate-speed) infinite ease-in;
+}
+
+/* ------Keyframes------ */
+@-webkit-keyframes bounce {
+  to {
+    top: 90%;
+  }
+}
+@keyframes bounce {
+  to {
+    top: 90%;
+  }
 }
 
 .bags-flip {
@@ -247,6 +424,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
   width: 80%;
 }
 
@@ -266,8 +444,74 @@ body {
   margin-left: 2em;
 }
 
+.row-flip .product-content-flip .product-name-flip {
+  font-family: "Vesper Libre", serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin: 0.2em;
+}
+
+.row-flip .product-content-flip .product-description-flip {
+  font-size: 1.2rem;
+  font-weight: 100;
+  margin: 1em 0.5em;
+  padding: 0.2em;
+}
+
+.row-flip .product-content-flip .more-info-flip {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  width: 30%;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  text-align: center;
+  border-radius: 50px;
+  border: none;
+  background-color: #121117;
+  color: var(--page-6-color);
+  margin: 2em 0.5em;
+  padding: 0.5em;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.row-flip .product-content-flip .more-info-flip:hover {
+  background-color: var(--secondary-color);
+  color: var(--page-2-color);
+}
+
 .row-flip .product-image-flip {
   width: 40%;
+}
+
+.row-flip svg {
+  position: absolute;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  bottom: 80%;
+  left: 100%;
+  width: 30px;
+  height: 80px;
+  fill: var(--page-6-color);
+}
+
+/* ------Product Flipped Section Arrow SVG Animation------ */
+.row-flip svg {
+  -webkit-animation: bounce-flip var(--animate-speed) infinite ease-in;
+          animation: bounce-flip var(--animate-speed) infinite ease-in;
+}
+
+/* ------Keyframes------ */
+@-webkit-keyframes bounce-flip {
+  to {
+    bottom: 90%;
+  }
+}
+@keyframes bounce-flip {
+  to {
+    bottom: 90%;
+  }
 }
 
 /*-------The Featured Section-----------*/
@@ -275,6 +519,15 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #fff;
+}
+
+#featured .section-head {
+  margin-bottom: 0em;
+  margin-top: 2em;
+  padding: 0.2em;
+  text-align: center;
+  width: 50%;
 }
 
 .row-featured {
@@ -304,7 +557,47 @@ body {
 .row-featured .featured-product .featured-image {
   width: 100%;
   height: 50%;
-  margin-top: 4em;
+  margin-top: 0.2em;
+}
+
+.featured-product-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.featured-product-content .product-name {
+  font-family: "Vesper Libre", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.2em;
+}
+
+.featured-product-content .more-info {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 1px solid var(--page-2-color);
+  width: 50%;
+  font-size: 0.7rem;
+  font-weight: 400;
+  margin-bottom: 0.2em;
+  padding: 0.5em 1em;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+}
+
+.featured-product-content .more-info:hover {
+  background-color: var(--page-2-color);
+  color: #fff;
+  border: none;
 }
 
 #featured img {
@@ -345,6 +638,8 @@ body {
 }
 
 #contact .column-1 h3 {
+  font-family: "Vesper Libre", serif;
+  font-weight: 700;
   text-align: center;
   text-transform: uppercase;
   font-size: 2.5rem;
@@ -356,17 +651,50 @@ body {
   width: 100%;
   height: 150%;
   margin: 0.5em 1em 2em 1em;
+  fill: var(--secondary-color);
 }
 
 #contact .column-2 {
   height: 80%;
   padding: 2em;
   margin: 1.5em 1em;
+  /*-------The Form Footer(Social Media Links-----------*/
 }
 
 #contact .column-2 p {
+  font-family: "Vesper Libre", serif;
+  font-weight: 700;
   font-size: 2rem;
   margin: 1.8em 0em 1em 0em;
+}
+
+#contact .column-2 form {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+#contact .column-2 form label {
+  font-size: 1rem;
+}
+
+#contact .column-2 form input,
+#contact .column-2 form textarea {
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 5px 10px var(--page-1-color);
+          box-shadow: 5px 5px 10px var(--page-1-color);
+}
+
+#contact .column-2 form input {
+  height: 15%;
+}
+
+#contact .column-2 form textarea {
+  height: 50%;
+}
+
+#contact .column-2 textarea::-webkit-resizer {
+  display: none;
 }
 
 #contact .column-2 .form-footer {
@@ -387,7 +715,21 @@ body {
 
 #contact .column-2 .form-footer ul li {
   padding: 0.2em;
-  margin: 0.8em 0em;
+  margin: 2.5em 0em;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+}
+
+#contact .column-2 .form-footer ul .form-footer-link-1 {
+  color: #bc2a8d;
+}
+
+#contact .column-2 .form-footer ul .form-footer-link-2 {
+  color: #3b5998;
+}
+
+#contact .column-2 .form-footer ul .form-footer-link-3 {
+  color: #00acee;
 }
 
 .column-2 form {
@@ -412,5 +754,58 @@ textarea {
 
 .form-btn {
   width: 10%;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  padding: 0.5em;
+  color: var(--page-4-color);
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  padding: 0.5em;
+  color: var(--page-4-color);
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  padding: 0.5em;
+  color: var(--page-4-color);
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  padding: 0.5em;
+  color: var(--page-4-color);
+}
+
+.form-btn {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  border: none;
+  border-radius: 50px;
+  padding: 0.2em;
+  margin-top: 0.8em;
+  width: 20%;
+  -webkit-box-shadow: 5px 5px 10px var(--page-1-color);
+          box-shadow: 5px 5px 10px var(--page-1-color);
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+  cursor: pointer;
+}
+
+.form-btn:hover {
+  background-color: var(--page-5-color);
+  color: #fff;
 }
 /*# sourceMappingURL=main.css.map */

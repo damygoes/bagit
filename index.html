@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&family=Vesper+Libre:wght@700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&family=Vesper+Libre:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -24,33 +24,31 @@
   <body id="top">
     <nav class="mainNav">
       <ul class="left-nav">
-        <li class="navlink"><a href="#top">Home</a></li>
-        <li class="navlink"><a href="#about">About</a></li>
+        <li class="navlink"><a href="#top" class="btn">Home</a></li>
+        <li class="navlink"><a href="#about" class="btn">About</a></li>
       </ul>
       <a href="#top"><h2 class="brand-logo">BAG<span>.</span>IT</h2></a>
       <ul class="right-nav">
-        <li class="navlink"><a href="#product">Product</a></li>
-        <li class="Contact"><a href="#contact">Contact</a></li>
+        <li class="navlink"><a href="#product" class="btn">Product</a></li>
+        <li class="Contact"><a href="#contact" class="btn">Contact</a></li>
       </ul>
     </nav>
 
     <header id="hero" class="page">
-      <h1 class="main-title">Wear Unconventional Styles</h1>
+      <h1 class="main-title">
+        Wear <br />
+        Unconventional <br />
+        Styles
+      </h1>
       <div class="hero-cta">
-        <a href="#product"
-          ><p class="main-subtitle">Explore Bag.It</p>
-          <div class="hero-svg">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-              <path
-                d="M112 112C112 50.14 162.1 0 224 0C285.9 0 336 50.14 336 112V160H400C426.5 160 448 181.5 448 208V416C448 469 405 512 352 512H96C42.98 512 0 469 0 416V208C0 181.5 21.49 160 48 160H112V112zM160 160H288V112C288 76.65 259.3 48 224 48C188.7 48 160 76.65 160 112V160zM136 256C149.3 256 160 245.3 160 232C160 218.7 149.3 208 136 208C122.7 208 112 218.7 112 232C112 245.3 122.7 256 136 256zM312 208C298.7 208 288 218.7 288 232C288 245.3 298.7 256 312 256C325.3 256 336 245.3 336 232C336 218.7 325.3 208 312 208z"
-              />
-            </svg></div
-        ></a>
+        <a href="#product" class="btn primary-link">WJ-Series </a>
+        <a href="#featured" class="btn secondary-link">Easy-Style </a>
       </div>
     </header>
+
     <section id="about" class="page">
       <h2 class="section-head">Who we are</h2>
+      <hr />
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis rerum
         quis esse ipsum, earum saepe totam eligendi aperiam quibusdam dolor eos
@@ -67,32 +65,57 @@
         inventore dicta sint hic.
       </p>
     </section>
+
     <div id="product" class="bags page">
+      <h2 class="product-section-head">Our Products</h2>
+      <hr />
       <div class="row">
         <div class="product-content">
-          <h3 class="product-name">bag 1</h3>
+          <h3 class="product-name">walking jewels xv</h3>
           <p class="product-description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
             commodi ab eaque distinctio explicabo? Perspiciatis ut veniam porro
             eveniet voluptatum.
           </p>
-          <a href="#" class="more-info">learn more</a>
+          <a href="https://www.google.com" target="_blank" class="more-info btn"
+            >learn more</a
+          >
         </div>
         <div class="product-image">
           <img src="images/ehimetalor-akhere-unuabona-1.jpg" alt="" />
         </div>
+        <a href="#product-flip" class="btn"
+          ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+            <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+            <path
+              d="M169.4 278.6C175.6 284.9 183.8 288 192 288s16.38-3.125 22.62-9.375l160-160c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0L192 210.8L54.63 73.38c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L169.4 278.6zM329.4 265.4L192 402.8L54.63 265.4c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25l160 160C175.6 476.9 183.8 480 192 480s16.38-3.125 22.62-9.375l160-160c12.5-12.5 12.5-32.75 0-45.25S341.9 252.9 329.4 265.4z"
+            /></svg
+        ></a>
       </div>
     </div>
-    <div class="bags-flip page">
+
+    <div id="product-flip" class="bags-flip page">
       <div class="row-flip">
+        <a href="#product" class="btn"
+          ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+            <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+            <path
+              d="M169.4 278.6C175.6 284.9 183.8 288 192 288s16.38-3.125 22.62-9.375l160-160c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0L192 210.8L54.63 73.38c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L169.4 278.6zM329.4 265.4L192 402.8L54.63 265.4c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25l160 160C175.6 476.9 183.8 480 192 480s16.38-3.125 22.62-9.375l160-160c12.5-12.5 12.5-32.75 0-45.25S341.9 252.9 329.4 265.4z"
+            /></svg
+        ></a>
         <div class="product-content-flip">
-          <h3 class="product-name-flip">bag 1</h3>
+          <h3 class="product-name-flip">walking jewels LT2</h3>
           <p class="product-description-flip">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
             commodi ab eaque distinctio explicabo? Perspiciatis ut veniam porro
             eveniet voluptatum.
           </p>
-          <a href="#" class="more-info-flip">learn more</a>
+          <a
+            href="https://www.google.com"
+            target="_blank"
+            class="more-info-flip btn"
+            >learn more</a
+          >
         </div>
         <div class="product-image-flip">
           <img src="images/ehimetalor-akhere-unuabona-2.jpg" alt="" />
@@ -101,14 +124,14 @@
     </div>
 
     <section id="featured" class="page">
-      <h2 class="section-head">Explore The WJ-Style Series</h2>
+      <h2 class="section-head">Explore The Easy-Style Series</h2>
       <div class="row-featured">
         <div class="featured-product">
           <div class="featured-image">
             <img src="images/trinh-minh-1.jpg" alt="" />
           </div>
           <div class="featured-product-content">
-            <h4 class="product-name">WJ STYLE I</h4>
+            <h4 class="product-name">OCEANIA ES-III</h4>
             <a href="#" class="more-info">explore </a>
           </div>
         </div>
@@ -117,7 +140,7 @@
             <img src="images/charlesdeluvio.jpg" alt="" />
           </div>
           <div class="featured-product-content">
-            <h4 class="product-name">WJ STYLE II</h4>
+            <h4 class="product-name">URBAN ES-IX</h4>
             <a href="#" class="more-info">explore </a>
           </div>
         </div>
@@ -126,12 +149,13 @@
             <img src="images/maude-frederique-lavoie.jpg" alt="" />
           </div>
           <div class="featured-product-content">
-            <h4 class="product-name">WJ STYLE III</h4>
+            <h4 class="product-name">CLASSIC ES-VI</h4>
             <a href="#" class="more-info">explore </a>
           </div>
         </div>
       </div>
     </section>
+
     <div id="contact">
       <div class="column-1">
         <h3>We'd love to hear from you</h3>
@@ -178,7 +202,7 @@
             placeholder="Enter your email"
           />
 
-          <label for="phoneNumber">Phone Number</label>
+          <label for="phoneNumber">Phone Number (optional)</label>
           <input
             type="tel"
             name="phoneNumber"
@@ -199,12 +223,18 @@
         </form>
         <div class="form-footer">
           <ul>
-            <li class="form-footer-link">Instagram</li>
-            <li class="form-footer-link">Facebook</li>
-            <li class="form-footer-link">Twitter</li>
+            <li class="form-footer-link-1">Instagram</li>
+            <li class="form-footer-link-2">Facebook</li>
+            <li class="form-footer-link-3">Twitter</li>
           </ul>
         </div>
       </div>
     </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
