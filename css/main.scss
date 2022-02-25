@@ -319,7 +319,7 @@ body {
       background-color: #121117;
       margin: 2em 0.5em;
       padding: 0.5em;
-      transition: all 400ms ease-in-out;
+      transition: all 300ms ease-in;
       // border: 1px solid white;
 
       &:hover {
@@ -398,7 +398,7 @@ body {
       color: var(--page-6-color);
       margin: 2em 0.5em;
       padding: 0.5em;
-      transition: all 400ms ease-in-out;
+      transition: all 300ms ease-in-out;
       // border: 1px solid white;
 
       &:hover {
@@ -494,7 +494,7 @@ body {
     font-weight: 400;
     margin-bottom: 0.2em;
     padding: 0.5em 1em;
-    transition: all 400ms ease-in-out;
+    transition: all 300ms ease-in-out;
 
     &:hover {
       background-color: var(--page-2-color);
@@ -525,6 +525,10 @@ body {
   flex-direction: column;
   width: 50%;
 }
+
+// #contact .column-2 {
+//   position: relative;
+// }
 
 #contact .column-1 {
   align-items: center;
@@ -562,6 +566,37 @@ body {
   form {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
+    position: relative;
+
+    .icon-2 {
+      color: var(--secondary-color);
+      position: absolute;
+      top: 103px;
+      left: 0;
+      padding: 0em 0.5em;
+    }
+
+    .icon-3 {
+      color: var(--secondary-color);
+      position: absolute;
+      top: 177px;
+      left: 0;
+      padding: 0em 0.5em;
+    }
+    .icon-4 {
+      color: var(--secondary-color);
+      position: absolute;
+      top: 248px;
+      left: 0;
+      padding: 0em 0.5em;
+    }
+    .icon-5 {
+      color: green;
+      position: absolute;
+      top: 258px;
+      left: 0;
+      padding: 0em 0.5em;
+    }
 
     label {
       font-size: 1rem;
@@ -640,6 +675,13 @@ textarea::placeholder {
   color: var(--page-4-color);
 }
 
+input::placeholder {
+  padding-left: 2.5em;
+}
+textarea::placeholder {
+  padding-left: 0.5em;
+}
+
 .form-btn {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
@@ -650,11 +692,111 @@ textarea::placeholder {
   margin-top: 0.8em;
   width: 20%;
   box-shadow: 5px 5px 10px var(--page-1-color);
-  transition: all 400ms ease-in-out;
+  transition: all 300ms ease-in-out;
   cursor: pointer;
 
   &:hover {
     background-color: var(--page-5-color);
     color: #fff;
+  }
+}
+
+form > label + i {
+  color: var(--secondary-color);
+  position: absolute;
+  top: 32px;
+  left: 0;
+  padding: 0em 0.5em;
+}
+
+/////////////////////////////////////////////
+/*-------Media Queries-----------*/
+/////////////////////////////////////////////
+
+/*-------1200px to 1400px-----------*/
+@media (max-width: 1400px) {
+  #hero {
+    .main-title {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      max-width: 30%;
+      padding: 0.5em 1.2em;
+      margin: 5em 0.1em 0em 0em;
+    }
+
+    .hero-cta {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 30%;
+      height: 10%;
+
+      a {
+        font-size: 1rem;
+        margin: 0.1em 0.5em;
+        padding: 0.5em 1em;
+        width: 20%;
+        text-align: center;
+        border: 1px solid red;
+      }
+    }
+  }
+
+  #product .row .product-content .product-name,
+  #product-flip .row-flip .product-content-flip .product-name-flip {
+    font-size: 2rem;
+  }
+  #product .row .product-content .product-description,
+  #product-flip .row-flip .product-content-flip .product-description-flip {
+    font-size: 1rem;
+  }
+  #product .row .product-content .more-info,
+  #product-flip .row-flip .product-content-flip .more-info-flip {
+    font-size: 1rem;
+    margin: 1em 0.5em;
+  }
+  #product .row .product-image,
+  #product-flip .row-flip .product-image-flip {
+    height: 90%;
+  }
+
+  .row svg,
+  .row-flip svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  #featured {
+    .section-head {
+      font-size: 2.5rem;
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  // #contact .column-2 {
+  //   position: relative;
+  // }
+
+  #contact .column-1 {
+    h3 {
+      font-size: 2rem;
+    }
+  }
+
+  #contact .column-2 {
+    p {
+      margin: 1.4em 0em 0.8em 0em;
+    }
+
+    /*-------The Form Footer(Social Media Links-----------*/
+    .form-footer {
+      ul {
+        li {
+          margin: 1.5em 0em;
+          font-size: 0.7rem;
+        }
+      }
+    }
   }
 }
