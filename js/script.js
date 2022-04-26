@@ -11,3 +11,11 @@ $('a.btn').on('click', function(event) {
         );
     }
 });
+
+
+// Navbar changes color on scroll - FIX Later
+window.addEventListener('scroll', function() {
+    let mainNavBar = document.getElementById("#mainNav");
+    let windowPosition = window.scrollY > 0;
+    mainNavBar.addclassList.toggle('scrolling-active', windowPosition)
+})

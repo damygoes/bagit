@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&family=Vesper+Libre:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -17,12 +19,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
     <link rel="stylesheet" href="css/utilities.css" />
     <link rel="stylesheet" href="css/main.css" />
+
     <title>Welcome to Bag It</title>
   </head>
   <body id="top">
-    <nav class="mainNav">
+    <!-- Navbar Section -->
+    <nav id="mainNav" class="mainNav">
       <ul class="left-nav">
         <li class="navlink"><a href="#top" class="btn">Home</a></li>
         <li class="navlink"><a href="#about" class="btn">About</a></li>
@@ -34,6 +39,7 @@
       </ul>
     </nav>
 
+    <!-- Hero/Header Section -->
     <header id="hero" class="page">
       <h1 class="main-title">
         Wear <br />
@@ -66,12 +72,13 @@
       </p>
     </section>
 
+    <!-- Product Section -->
     <div id="product" class="bags page">
       <h2 class="product-section-head">Our Products</h2>
       <hr />
       <div class="row">
         <div class="product-content">
-          <h3 class="product-name">walking jewels xv</h3>
+          <h3 class="product-name">Just-Wear XE</h3>
           <p class="product-description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
             commodi ab eaque distinctio explicabo? Perspiciatis ut veniam porro
@@ -82,7 +89,9 @@
           >
         </div>
         <div class="product-image">
-          <img src="images/ehimetalor-akhere-unuabona-1.jpg" alt="" />
+          <a href="https://www.google.com/" target="_blank"
+            ><img src="images/ehimetalor-akhere-unuabona-1.jpg" alt=""
+          /></a>
         </div>
         <a href="#product-flip" class="btn"
           ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -104,7 +113,7 @@
             /></svg
         ></a>
         <div class="product-content-flip">
-          <h3 class="product-name-flip">walking jewels LT2</h3>
+          <h3 class="product-name-flip">Comfy-AF SE</h3>
           <p class="product-description-flip">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
             commodi ab eaque distinctio explicabo? Perspiciatis ut veniam porro
@@ -118,44 +127,60 @@
           >
         </div>
         <div class="product-image-flip">
-          <img src="images/ehimetalor-akhere-unuabona-2.jpg" alt="" />
+          <a href="https://www.google.com/" target="_blank"
+            ><img src="images/ehimetalor-akhere-unuabona-2.jpg" alt=""
+          /></a>
         </div>
       </div>
     </div>
 
+    <!-- Featured Products Section -->
     <section id="featured" class="page">
       <h2 class="section-head">Explore The Easy-Style Series</h2>
       <div class="row-featured">
         <div class="featured-product">
           <div class="featured-image">
-            <img src="images/trinh-minh-1.jpg" alt="" />
+            <a href="https://www.google.com/" target="_blank"
+              ><img src="images/trinh-minh-1.jpg" alt=""
+            /></a>
           </div>
           <div class="featured-product-content">
             <h4 class="product-name">OCEANIA ES-III</h4>
-            <a href="#" class="more-info">explore </a>
+            <a href="https://www.google.com/" target="_blank" class="more-info"
+              >explore
+            </a>
           </div>
         </div>
         <div class="featured-product">
           <div class="featured-image">
-            <img src="images/charlesdeluvio.jpg" alt="" />
+            <a href="https://www.google.com/" target="_blank"
+              ><img src="images/charlesdeluvio.jpg" alt=""
+            /></a>
           </div>
           <div class="featured-product-content">
             <h4 class="product-name">URBAN ES-IX</h4>
-            <a href="#" class="more-info">explore </a>
+            <a href="https://www.google.com/" target="_blank" class="more-info"
+              >explore
+            </a>
           </div>
         </div>
         <div class="featured-product">
           <div class="featured-image">
-            <img src="images/maude-frederique-lavoie.jpg" alt="" />
+            <a href="https://www.google.com/" target="_blank"
+              ><img src="images/maude-frederique-lavoie.jpg" alt=""
+            /></a>
           </div>
           <div class="featured-product-content">
             <h4 class="product-name">CLASSIC ES-VI</h4>
-            <a href="#" class="more-info">explore </a>
+            <a href="https://www.google.com/" target="_blank" class="more-info"
+              >explore
+            </a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Contact Section -->
     <div id="contact">
       <div class="column-1">
         <h3>We'd love to hear from you</h3>
@@ -178,39 +203,32 @@
       <div class="column-2">
         <p>Contact Us</p>
         <form action="#" method="post">
-          <label for="firstName">First Name</label>
-          <i class="fa-solid fa-user icon-1"></i
-          ><input
-            type="text"
-            name="firstName"
-            id="firstName"
-            placeholder="Enter your first name"
-          />
-
-          <label for="lastName">Last Name</label
-          ><i class="fa-solid fa-user icon-2"></i>
+          <label for="firstName">Full Name</label>
+          <!-- <i class="fa-solid fa-user icon-1"></i
+          > -->
           <input
             type="text"
-            name="lastName"
-            id="lastName"
-            placeholder="Enter your last name"
+            name="fullName"
+            id="fullName"
+            placeholder="🙍‍♂️ Enter your name"
           />
 
-          <label for="email">Email</label><i class="fa-solid fa-at icon-3"></i>
+          <label for="email">Email</label>
+          <!-- <i class="fa-solid fa-at icon-2"></i> -->
           <input
             type="text"
             name="email"
             id="email"
-            placeholder="Enter your email"
+            placeholder="📧 Enter your email"
           />
 
-          <label for="phoneNumber">Phone Number (optional)</label
-          ><i class="fa-solid fa-phone icon-4"></i>
+          <label for="phoneNumber">Phone Number (optional)</label>
+          <!-- <i class="fa-solid fa-phone icon-3"></i> -->
           <input
             type="tel"
             name="phoneNumber"
             id="phoneNumber"
-            placeholder="Enter your phone number"
+            placeholder="☎️ Enter your phone number"
           />
 
           <label for="message">Message</label>
@@ -219,20 +237,27 @@
             id="message"
             cols="30"
             rows="10"
-            placeholder="Enter your message"
+            placeholder="⌨️ Enter your message"
           ></textarea>
 
           <button class="form-btn">Submit</button>
         </form>
         <div class="form-footer">
           <ul>
-            <li class="form-footer-link-1">Instagram</li>
-            <li class="form-footer-link-2">Facebook</li>
-            <li class="form-footer-link-3">Twitter</li>
+            <a href="https://www.instagram.com/damy.goes/" target="_blank"
+              ><li class="form-footer-link-1">Instagram</li></a
+            >
+            <a href="https://www.facebook.com/damy.goes" target="_blank"
+              ><li class="form-footer-link-2">Facebook</li></a
+            >
+            <a href="https://twitter.com/damy_goes" target="_blank"
+              ><li class="form-footer-link-3">Twitter</li></a
+            >
           </ul>
         </div>
       </div>
     </div>
+
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
