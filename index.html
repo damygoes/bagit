@@ -202,7 +202,13 @@
       </div>
       <div class="column-2">
         <p>Contact Us</p>
-        <form action="#" method="post">
+        <form
+          id="contact-form"
+          action="BagItContact-form"
+          method="post"
+          onsubmit="event.preventDefault(); alert('Thank you for contacting us. We will get back to you shortly'); event.target.reset();"
+          ;
+        >
           <label for="firstName">Full Name</label>
           <!-- <i class="fa-solid fa-user icon-1"></i
           > -->
@@ -211,6 +217,7 @@
             name="fullName"
             id="fullName"
             placeholder="🙍‍♂️ Enter your name"
+            required
           />
 
           <label for="email">Email</label>
@@ -220,6 +227,7 @@
             name="email"
             id="email"
             placeholder="📧 Enter your email"
+            required
           />
 
           <label for="phoneNumber">Phone Number (optional)</label>
@@ -238,6 +246,7 @@
             cols="30"
             rows="10"
             placeholder="⌨️ Enter your message"
+            required
           ></textarea>
 
           <button class="form-btn">Submit</button>

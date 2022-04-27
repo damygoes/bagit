@@ -727,9 +727,9 @@ body {
 #contact .column-2 form input,
 #contact .column-2 form textarea {
   border: none;
-  border-radius: 10px;
-  -webkit-box-shadow: 5px 5px 10px var(--page-1-color);
-          box-shadow: 5px 5px 10px var(--page-1-color);
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 5px 5px var(--page-1-color);
+          box-shadow: 5px 5px 5px var(--page-1-color);
 }
 
 #contact .column-2 form input {
@@ -791,12 +791,6 @@ body {
   margin: 0.3em 0em 1em 0em;
 }
 
-input[type="text"],
-input[type="tel"],
-textarea {
-  width: 70%;
-}
-
 .form-btn {
   width: 10%;
 }
@@ -804,7 +798,6 @@ textarea {
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
   padding: 0.5em;
   color: var(--page-4-color);
 }
@@ -812,7 +805,6 @@ textarea::-webkit-input-placeholder {
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
   padding: 0.5em;
   color: var(--page-4-color);
 }
@@ -820,7 +812,6 @@ textarea:-ms-input-placeholder {
 input::-ms-input-placeholder,
 textarea::-ms-input-placeholder {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
   padding: 0.5em;
   color: var(--page-4-color);
 }
@@ -828,7 +819,6 @@ textarea::-ms-input-placeholder {
 input::placeholder,
 textarea::placeholder {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
   padding: 0.5em;
   color: var(--page-4-color);
 }

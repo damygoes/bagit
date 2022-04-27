@@ -654,8 +654,8 @@ body {
     input,
     textarea {
       border: none;
-      border-radius: 10px;
-      box-shadow: 5px 5px 10px var(--page-1-color);
+      border-radius: 5px;
+      box-shadow: 5px 5px 5px var(--page-1-color);
     }
     input {
       height: 15%;
@@ -708,11 +708,11 @@ body {
   }
 }
 
-input[type="text"],
-input[type="tel"],
-textarea {
-  width: 70%;
-}
+// input[type="text"],
+// input[type="tel"],
+// textarea {
+//   width: 70%;
+// }
 
 .form-btn {
   width: 10%;
@@ -721,7 +721,7 @@ textarea {
 input::placeholder,
 textarea::placeholder {
   font-family: "Montserrat", sans-serif;
-  font-size: 0.8rem;
+  // font-size: 0.8rem;
   padding: 0.5em;
   color: var(--page-4-color);
 }
